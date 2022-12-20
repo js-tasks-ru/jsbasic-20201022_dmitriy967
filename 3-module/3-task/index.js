@@ -4,15 +4,17 @@
  */
 function camelize(str) {
   // ваш код...
-  let changeOne = str.split('-');
+  let arr = str.split("-");
 
-  let changeTwo = changeOne.map(
+  let result = arr[0]
+    ? arr.map((elem, index) =>
+        elem && !index ? elem : elem[0].toUpperCase() + elem.slice(1)
+      )
+    : arr.map((elem, index) =>
+        !elem && index === 0 ? elem : elem[0].toUpperCase() + elem.slice(1)
+      );
 
-    (item, index) => index == 0 ? item : item[0].toUpperCase() + item.slice(1)
-    
-    );
+  const camilizeStr = result.join("");
 
-    let changeTree = changeTwo.join('');
-
-    return changeTree;
+  return camilizeStr;
 }
