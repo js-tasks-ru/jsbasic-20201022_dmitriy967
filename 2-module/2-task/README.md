@@ -7,6 +7,7 @@
 ```js
 function isEmpty(obj) {
   // ваш код...
+
 }
 
 let schedule = {};
